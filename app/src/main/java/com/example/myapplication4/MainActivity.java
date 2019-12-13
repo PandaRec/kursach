@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
     TextView tw1;
     int numberofday=0;
     String[][] TimeTable;
+    ArrayList<String> arrayList;
+
     private final static String FILE_NAME = "content.txt";
 
     @Override
@@ -51,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
 TimeTable tm = new TimeTable();
 tm.CountrOfWeeks();
 //tm.ReadFile();
-        ArrayList<String> arrayList;
         arrayList=ReadTimeTable();
         tw =(TextView) findViewById(R.id.label);
         tw1 =(TextView) findViewById(R.id.label1);//  для проверки что в файле ( для этого ужно убрать переход на ативити)
@@ -102,34 +103,43 @@ if(fin!=null) {
             case 1:
                 intent = new Intent(MainActivity.this, FirstActivity.class);
                 intent.putExtra("group",CheckText());
-                //intent.putExtra("timetable",TimeTable);
+                //intent.putExtra("day",numberofday);
+                intent.putExtra("timetable",arrayList);
                 startActivity(intent);
                 break;
             case 2:
                 intent = new Intent(MainActivity.this, SecondActivity.class);
                 intent.putExtra("group",CheckText());
+               // intent.putExtra("day",numberofday);
+                intent.putExtra("timetable",arrayList);
                 startActivity(intent);
                 break;
             case 3:
                 intent = new Intent(MainActivity.this, ThirdActivity.class);
                 intent.putExtra("group",CheckText());
+               // intent.putExtra("day",numberofday);
+                intent.putExtra("timetable",arrayList);
                 startActivity(intent);
                 break;
             case 4:
                 intent = new Intent(MainActivity.this, FourthActivity.class);
                 intent.putExtra("group",CheckText());
-                intent.putExtra("day",numberofday);
+               // intent.putExtra("day",numberofday);
                 intent.putExtra("timetable",arrayList);
                 startActivity(intent);
                 break;
             case 5:
                 intent = new Intent(MainActivity.this, FifthActivity.class);
                 intent.putExtra("group", CheckText());
+               // intent.putExtra("day",numberofday);
+                intent.putExtra("timetable",arrayList);
                 startActivity(intent);
                 break;
             case 6:
                 intent = new Intent(MainActivity.this, SixthActivity.class);
                 intent.putExtra("group",CheckText());
+                //intent.putExtra("day",numberofday);
+                intent.putExtra("timetable",arrayList);
                 startActivity(intent);
                 break;
                 default:
@@ -156,8 +166,8 @@ if(fin!=null) {
 
         String group= ed.getText().toString().toLowerCase();
 
-        // boolean result = group.matches("[а-я]{4}[-]{1}\\d{1}\\d{1}[-]{1}\\d{1}\\d{1}"); // это нужно оставить
-        boolean result =true; // это нужно убрать
+        boolean result = group.matches("[а-я]{4}[-]{1}\\d{1}\\d{1}[-]{1}\\d{1}\\d{1}"); // это нужно оставить
+        //boolean result =true; // это нужно убрать
 
         if(result==false) {
             Toast toast = Toast.makeText(this, "не верный ввод\nдолжно быть так:\nбсбо-07-18", Toast.LENGTH_LONG);
@@ -174,31 +184,37 @@ if(fin!=null) {
                 case 1:
                     intent = new Intent(MainActivity.this, FirstActivity.class);
                     intent.putExtra("group",CheckText());
+                    intent.putExtra("timetable",arrayList);
                     startActivity(intent);
                     break;
                 case 2:
                     intent = new Intent(MainActivity.this, SecondActivity.class);
                     intent.putExtra("group",CheckText());
+                    intent.putExtra("timetable",arrayList);
                     startActivity(intent);
                     break;
                 case 3:
                     intent = new Intent(MainActivity.this, ThirdActivity.class);
                     intent.putExtra("group",CheckText());
+                    intent.putExtra("timetable",arrayList);
                     startActivity(intent);
                     break;
                 case 4:
                     intent = new Intent(MainActivity.this, FourthActivity.class);
                     intent.putExtra("group",CheckText());
+                    intent.putExtra("timetable",arrayList);
                     startActivity(intent);
                     break;
                 case 5:
                     intent = new Intent(MainActivity.this, FifthActivity.class);
                     intent.putExtra("group", CheckText());
+                    intent.putExtra("timetable",arrayList);
                     startActivity(intent);
                     break;
                 case 6:
                     intent = new Intent(MainActivity.this, SixthActivity.class);
                     intent.putExtra("group",CheckText());
+                    intent.putExtra("timetable",arrayList);
                     startActivity(intent);
                     break;
                 default:

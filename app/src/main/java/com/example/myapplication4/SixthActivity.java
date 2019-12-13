@@ -25,6 +25,8 @@ public class SixthActivity extends AppCompatActivity {
     TextView tvTxt;
     int i;
     String group;
+    int day;
+    ArrayList<String> timetable_pre;
     //private static final int SWIPE_MIN_DISTANCE = 130;
     //private static final int SWIPE_MAX_DISTANCE = 300;
     //private static final int SWIPE_MIN_VELOCITY = 200;
@@ -41,7 +43,8 @@ public class SixthActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sixth);
         Intent intent = getIntent();
         group=intent.getStringExtra("group");
-       // i=intent.getIntExtra("counter",0);
+        //day=intent.getIntExtra("day",0);
+        day=6;
         i=6;
 
 
@@ -104,7 +107,99 @@ public class SixthActivity extends AppCompatActivity {
         TextView t6_4 = (TextView) findViewById(R.id.m6_4);
         TextView t6_5 = (TextView) findViewById(R.id.m6_5);
         TextView t6_6 = (TextView) findViewById(R.id.m6_6);
+        ArrayList<TextView> al1 = new ArrayList<>();
+        TimeTable tm = new TimeTable();
 
+
+
+        al1.add(t1_3);
+        al1.add(t1_4);
+        al1.add(t1_5);
+        al1.add(t1_6);
+
+        al1.add(t2_3);
+        al1.add(t2_4);
+        al1.add(t2_5);
+        al1.add(t2_6);
+
+        al1.add(t3_3);
+        al1.add(t3_4);
+        al1.add(t3_5);
+        al1.add(t3_6);
+
+        al1.add(t4_3);
+        al1.add(t4_4);
+        al1.add(t4_5);
+        al1.add(t4_6);
+
+        al1.add(t5_3);
+        al1.add(t5_4);
+        al1.add(t5_5);
+        al1.add(t5_6);
+
+        al1.add(t6_3);
+        al1.add(t6_4);
+        al1.add(t6_5);
+        al1.add(t6_6);
+
+
+        timetable_pre = intent.getStringArrayListExtra("timetable");
+        int fsdfs=timetable_pre.size();
+        String[][] timetable = new String[timetable_pre.size() / 4][4];
+
+        int counter1 = 0;
+
+        for (int i = 0; i < timetable.length; i++) {
+            for (int j = 0; j < timetable[0].length; j++) {
+                timetable[i][j] = timetable_pre.get(counter1);
+                counter1++;
+            }
+        }
+
+        int counter = 0;
+
+        if (tm.CountrOfWeeks() % 2 == 0) {
+            //четная неделя
+
+            for (int i = day * 12 + 1; i < day * 12 + 11 - 12; i += 2) {
+                //if(tm.DecodeStringLesson(timetable[i][0],tm.CountrOfWeeks())==true){
+
+                //t1_3.setText(ma.TimeTable[i][0]);
+                //t1_4.setText(ma.TimeTable[i][1]);
+                //t1_5.setText(ma.TimeTable[i][2]);
+                //t1_6.setText(ma.TimeTable[i][3]);
+                al1.get(counter).setText(timetable[i][0] + "\n");
+                al1.get(counter + 1).setText(timetable[i][1] + "\n");
+                al1.get(counter + 2).setText(timetable[i][2] + "\n");
+                al1.get(counter + 3).setText(timetable[i][3] + "\n");
+
+
+                //}
+                counter += 4;
+
+
+            }
+
+
+        } else {
+            //не четная неделя
+
+            for (int i = day * 12 - 12; i < day * 12 + 11 - 12; i += 2) {
+                // if(tm.DecodeStringLesson(timetable[i][0],tm.CountrOfWeeks())==true){
+
+
+                al1.get(counter).setText(timetable[i][0] + "\n");
+                al1.get(counter + 1).setText(timetable[i][1] + "\n");
+                al1.get(counter + 2).setText(timetable[i][2] + "\n");
+                al1.get(counter + 3).setText(timetable[i][3] + "\n");
+
+
+                counter += 4;
+
+                //}
+            }
+
+        }
 
         ArrayList<Integer> list = new ArrayList<Integer>();
 
@@ -628,29 +723,39 @@ public class SixthActivity extends AppCompatActivity {
                     case 1:
                         intent = new Intent(SixthActivity.this, FirstActivity.class);
                         intent.putExtra("group",group);
+                       // intent.putExtra("day",day);
+                        intent.putExtra("timetable",timetable_pre);
                         startActivity(intent);
                         break;
                     case 2:
                         intent = new Intent(SixthActivity.this, SecondActivity.class);
                         intent.putExtra("group",group);
+                       // intent.putExtra("day",day);
+                        intent.putExtra("timetable",timetable_pre);
                         startActivity(intent);
                         break;
 
                     case 3:
                         intent = new Intent(SixthActivity.this, ThirdActivity.class);
                         intent.putExtra("group",group);
+                       // intent.putExtra("day",day);
+                        intent.putExtra("timetable",timetable_pre);
                         startActivity(intent);
                         break;
 
                     case 4:
                         intent = new Intent(SixthActivity.this, FourthActivity.class);
                         intent.putExtra("group",group);
+                       // intent.putExtra("day",day);
+                        intent.putExtra("timetable",timetable_pre);
                         startActivity(intent);
                         break;
 
                     case 5:
                         intent = new Intent(SixthActivity.this, FifthActivity.class);
                         intent.putExtra("group",group);
+                        //intent.putExtra("day",day);
+                        intent.putExtra("timetable",timetable_pre);
                         startActivity(intent);
                         break;
 
@@ -673,29 +778,39 @@ public class SixthActivity extends AppCompatActivity {
                     case 1:
                         intent = new Intent(SixthActivity.this, FirstActivity.class);
                         intent.putExtra("group",group);
+                       // intent.putExtra("day",day);
+                        intent.putExtra("timetable",timetable_pre);
                         startActivity(intent);
                         break;
                     case 2:
                         intent = new Intent(SixthActivity.this, SecondActivity.class);
                         intent.putExtra("group",group);
+                        //intent.putExtra("day",day);
+                        intent.putExtra("timetable",timetable_pre);
                         startActivity(intent);
                         break;
 
                     case 3:
                         intent = new Intent(SixthActivity.this, ThirdActivity.class);
                         intent.putExtra("group",group);
+                       // intent.putExtra("day",day);
+                        intent.putExtra("timetable",timetable_pre);
                         startActivity(intent);
                         break;
 
                     case 4:
                         intent = new Intent(SixthActivity.this, FourthActivity.class);
                         intent.putExtra("group",group);
+                       // intent.putExtra("day",day);
+                        intent.putExtra("timetable",timetable_pre);
                         startActivity(intent);
                         break;
 
                     case 5:
                         intent = new Intent(SixthActivity.this, FifthActivity.class);
                         intent.putExtra("group",group);
+                       // intent.putExtra("day",day);
+                        intent.putExtra("timetable",timetable_pre);
                         startActivity(intent);
                         break;
 

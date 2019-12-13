@@ -31,6 +31,7 @@ public class FourthActivity extends AppCompatActivity {
     int i;
     String group;
     int day;
+    ArrayList<String> timetable_pre;
 
     //String[][] timetable;
 
@@ -48,22 +49,12 @@ public class FourthActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fourth);
-
+//boolean first_open=false;
         Intent intent = getIntent();
         group=intent.getStringExtra("group");
         day=intent.getIntExtra("day",0);
-        ArrayList<String> timetable_pre;// = new ArrayList<String>();
-        timetable_pre=intent.getStringArrayListExtra("timetable");
-        String[][] timetable=new String[timetable_pre.size()/4][4];
+        day=4;
 
-        int counter1=0;
-
-        for(int i=0;i<timetable.length;i++){
-            for(int j=0;j<timetable[0].length;j++){
-                timetable[i][j]=timetable_pre.get(counter1);
-                counter1++;
-            }
-        }
 
 
 
@@ -132,106 +123,115 @@ public class FourthActivity extends AppCompatActivity {
         TextView t6_5 = (TextView) findViewById(R.id.m6_5);
         TextView t6_6 = (TextView) findViewById(R.id.m6_6);
 
-
-        //утсновка расписания
-        TimeTable tm = new TimeTable();
-ArrayList<TextView> al1 = new ArrayList<>();
-
-
-        al1.add(t1_3);
-        al1.add(t1_4);
-        al1.add(t1_5);
-        al1.add(t1_6);
-
-        al1.add(t2_3);
-        al1.add(t2_4);
-        al1.add(t2_5);
-        al1.add(t2_6);
-
-        al1.add(t3_3);
-        al1.add(t3_4);
-        al1.add(t3_5);
-        al1.add(t3_6);
-
-        al1.add(t4_3);
-        al1.add(t4_4);
-        al1.add(t4_5);
-        al1.add(t4_6);
-
-        al1.add(t5_3);
-        al1.add(t5_4);
-        al1.add(t5_5);
-        al1.add(t5_6);
-
-        al1.add(t6_3);
-        al1.add(t6_4);
-        al1.add(t6_5);
-        al1.add(t6_6);
-//int loles =day*12+2;
-//System.out.println("8888888888888888888888888888888888----->"+loles);
+//if(first_open==false) {
+    //утсновка расписания
+    TimeTable tm = new TimeTable();
+    ArrayList<TextView> al1 = new ArrayList<>();
 
 
-int counter=0;
-day=3;
-        if(tm.CountrOfWeeks()%2==0){
-            //четная неделя
+    al1.add(t1_3);
+    al1.add(t1_4);
+    al1.add(t1_5);
+    al1.add(t1_6);
 
-            for(int i=day*12+2;i<timetable.length;i+=2){
-                    //if(tm.DecodeStringLesson(timetable[i][0],tm.CountrOfWeeks())==true){
+    al1.add(t2_3);
+    al1.add(t2_4);
+    al1.add(t2_5);
+    al1.add(t2_6);
 
-                        //t1_3.setText(ma.TimeTable[i][0]);
-                        //t1_4.setText(ma.TimeTable[i][1]);
-                        //t1_5.setText(ma.TimeTable[i][2]);
-                        //t1_6.setText(ma.TimeTable[i][3]);
-                        al1.get(counter).setText(timetable[i][0]+"\n");
-                        al1.get(counter+1).setText(timetable[i][1]+"\n");
-                        al1.get(counter+2).setText(timetable[i][2]+"\n");
-                        al1.get(counter+3).setText(timetable[i][3]+"\n");
+    al1.add(t3_3);
+    al1.add(t3_4);
+    al1.add(t3_5);
+    al1.add(t3_6);
+
+    al1.add(t4_3);
+    al1.add(t4_4);
+    al1.add(t4_5);
+    al1.add(t4_6);
+
+    al1.add(t5_3);
+    al1.add(t5_4);
+    al1.add(t5_5);
+    al1.add(t5_6);
+
+    al1.add(t6_3);
+    al1.add(t6_4);
+    al1.add(t6_5);
+    al1.add(t6_6);
 
 
-                    //}
-                    counter+=4;
+    //ArrayList<String> timetable_pre;// = new ArrayList<String>();
+    timetable_pre = intent.getStringArrayListExtra("timetable");
+
+    String[][] timetable = new String[timetable_pre.size() / 4][4];
+
+    int counter1 = 0;
+
+    for (int i = 0; i < timetable.length; i++) {
+        for (int j = 0; j < timetable[0].length; j++) {
+            timetable[i][j] = timetable_pre.get(counter1);
+            counter1++;
+        }
+    }
 
 
-            }
+
+int counter = 0;
+
+
+    if (tm.CountrOfWeeks() % 2 == 0) {
+        //четная неделя
+
+        for (int i = day * 12 + 1; i < day * 12 + 11 - 12; i += 2) {
+            //if(tm.DecodeStringLesson(timetable[i][0],tm.CountrOfWeeks())==true){
+
+            //t1_3.setText(ma.TimeTable[i][0]);
+            //t1_4.setText(ma.TimeTable[i][1]);
+            //t1_5.setText(ma.TimeTable[i][2]);
+            //t1_6.setText(ma.TimeTable[i][3]);
+            al1.get(counter).setText(timetable[i][0] + "\n");
+            al1.get(counter + 1).setText(timetable[i][1] + "\n");
+            al1.get(counter + 2).setText(timetable[i][2] + "\n");
+            al1.get(counter + 3).setText(timetable[i][3] + "\n");
+
+
+            //}
+            counter += 4;
 
         }
-        else {
-            //не четная неделя
-
-            for(int i=day*12-12;i<day*12+11-12;i+=2){
-                   // if(tm.DecodeStringLesson(timetable[i][0],tm.CountrOfWeeks())==true){
-                /*
-                al1.get(counter).setText(timetable[i][0]+"\n");
-                al1.get(counter+1).setText(timetable[i][1]+"\n");
-                al1.get(counter+2).setText(timetable[i][2]+"\n");
-                al1.get(counter+3).setText(timetable[i][3]+"\n");
-
-                 */
-
-                al1.get(counter).setText(timetable[i][0]);
-                al1.get(counter+1).setText(timetable[i][1]);
-                al1.get(counter+2).setText(timetable[i][2]);
-                al1.get(counter+3).setText(timetable[i][3]);
 
 
-                    counter+=4;
+    }
+    else {
+        //не четная неделя
 
-                //}
-            }
+        for (int i = day * 12 - 12; i < day * 12 + 11 - 12; i += 2) {
+            // if(tm.DecodeStringLesson(timetable[i][0],tm.CountrOfWeeks())==true){
 
+
+        al1.get(counter).setText(timetable[i][0] + "\n");
+        al1.get(counter + 1).setText(timetable[i][1] + "\n");
+        al1.get(counter + 2).setText(timetable[i][2] + "\n");
+        al1.get(counter + 3).setText(timetable[i][3] + "\n");
+
+
+        counter += 4;
+
+        //}
         }
+
+    }
+
+
+
+
+//}
         //int measuredHeight = (new StaticLayout(measuredText, paint, targetWidth, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, true)).getHeight();
 /*
 for(int i=0;i<al1.size();i++){
     al1.get(i).requestLayout();
 }
 */
-String fsf=t2_3.getText().toString();
-char[] ch={'a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','b'};
-String lollollol="erfepiruvjnercpiucvnepruineuife67 klfvheriljbvelfvbjefvljhe f77 kjfcvhdfjkvndjklfvn89";
-CharSequence kek=timetable[38][0];
-t5_3.setText(ch.toString());
 
         ArrayList<Integer> list = new ArrayList<Integer>();
 
@@ -759,28 +759,39 @@ t5_3.setText(ch.toString());
                     case 1:
                         intent = new Intent(FourthActivity.this, FirstActivity.class);
                         intent.putExtra("group",group);
+                       // intent.putExtra("day",day);
+                        intent.putExtra("timetable",timetable_pre);
                         startActivity(intent);
                         break;
                     case 2:
                         intent = new Intent(FourthActivity.this, SecondActivity.class);
                         intent.putExtra("group",group);
+                       // intent.putExtra("day",day);
+                        intent.putExtra("timetable",timetable_pre);
                         startActivity(intent);
                         break;
                     case 3:
                         intent = new Intent(FourthActivity.this, ThirdActivity.class);
                         intent.putExtra("group",group);
+                       // intent.putExtra("day",day);
+                        intent.putExtra("timetable",timetable_pre);
                         startActivity(intent);
                         break;
 
                     case 5:
                         intent = new Intent(FourthActivity.this, FifthActivity.class);
                         intent.putExtra("group",group);
+                       // intent.putExtra("day",day);
+                        intent.putExtra("timetable",timetable_pre);
+                        int dfjksfk=timetable_pre.size();
                         startActivity(intent);
                         break;
 
                     case 6:
                         intent = new Intent(FourthActivity.this, SixthActivity.class);
                         intent.putExtra("group",group);
+                       // intent.putExtra("day",day);
+                        intent.putExtra("timetable",timetable_pre);
                         startActivity(intent);
                         break;
 
@@ -801,6 +812,8 @@ t5_3.setText(ch.toString());
                     case 1:
                         intent = new Intent(FourthActivity.this, FirstActivity.class);
                         intent.putExtra("group",group);
+                       // intent.putExtra("day",day);
+                        intent.putExtra("timetable",timetable_pre);
                         startActivity(intent);
                         break;
                     case 2:
@@ -811,18 +824,25 @@ t5_3.setText(ch.toString());
                     case 3:
                         intent = new Intent(FourthActivity.this, ThirdActivity.class);
                         intent.putExtra("group",group);
+                       // intent.putExtra("day",day);
+                        intent.putExtra("timetable",timetable_pre);
                         startActivity(intent);
                         break;
 
                     case 5:
                         intent = new Intent(FourthActivity.this, FifthActivity.class);
                         intent.putExtra("group",group);
+                       // intent.putExtra("day",day);
+                        intent.putExtra("timetable",timetable_pre);
+                        int dfjksfk=timetable_pre.size();
                         startActivity(intent);
                         break;
 
                     case 6:
                         intent = new Intent(FourthActivity.this, SixthActivity.class);
                         intent.putExtra("group",group);
+                       // intent.putExtra("day",day);
+                        intent.putExtra("timetable",timetable_pre);
                         startActivity(intent);
                         break;
 
