@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TableLayout
+        android:id="@+id/main_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:background="#000">
+        <TableRow>
+            <TextView android:textColor="#fff"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:background="#7fc342"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_span="6"
+                android:id="@+id/m0_0"
+
+                android:text="Понедельник,Группа"/>
+        </TableRow>
+
+        <TableRow
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/m0_1"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" № "
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m0_2"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" Время "
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m0_3"
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" предмет "
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m0_4"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" тип "
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m0_5"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" препод "
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m0_6"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" аудитория "
+                android:textColor="#36a300" />
+
+
+        </TableRow>
+
+        <TableRow
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/m1_1"
+
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" 1 ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m1_2"
+
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text="9:30-10:30"
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m1_3"
+
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" предмет "
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m1_4"
+
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" тип "
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m1_5"
+
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" препод "
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m1_6"
+
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" аудитория "
+                android:textColor="#36a300" />
+
+
+        </TableRow>
+
+        <TableRow
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/m2_1"
+
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" 2 "
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m2_2"
+
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text="10:40-12:10"
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m2_3"
+
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" предмет "
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m2_4"
+
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" тип "
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m2_5"
+
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" препод "
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m2_6"
+
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" аудитория "
+                android:textColor="#36a300" />
+
+
+        </TableRow>
+
+        <TableRow
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/m3_1"
+
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" 3 "
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m3_2"
+
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text="13:10-14:40"
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m3_3"
+
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" предмет "
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m3_4"
+
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" тип "
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m3_5"
+
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" препод "
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m3_6"
+
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" аудитория "
+                android:textColor="#36a300" />
+
+
+        </TableRow>
+
+        <TableRow
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/m4_1"
+
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" 4 "
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m4_2"
+
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text="14:50-16:20"
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m4_3"
+
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" предмет "
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m4_4"
+
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" тип "
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m4_5"
+
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" препод "
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m4_6"
+
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" аудитория "
+                android:textColor="#36a300" />
+
+
+        </TableRow>
+
+        <TableRow
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/m5_1"
+
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" 5 "
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m5_2"
+
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text="16:30-18:00"
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m5_3"
+
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" предмет "
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m5_4"
+
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" тип "
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m5_5"
+
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" препод "
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m5_6"
+
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" аудитория "
+                android:textColor="#36a300" />
+
+
+        </TableRow>
+
+        <TableRow
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/m6_1"
+
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" 6 "
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m6_2"
+
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text="18:10-19:40"
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m6_3"
+
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" предмет "
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m6_4"
+
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" тип "
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m6_5"
+
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" препод "
+                android:textColor="#36a300" />
+
+            <TextView
+                android:id="@+id/m6_6"
+
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#fff"
+                android:text=" аудитория "
+                android:textColor="#36a300" />
+
+
+        </TableRow>
+
+
+
+
+
+
+
+
+
+
+
+
+    </TableLayout>
+</ScrollView>
