@@ -58,7 +58,9 @@ public class FifthActivity extends AppCompatActivity {
 
         tvTxt = (TextView) findViewById(R.id.m0_0);
        // tvTxt.setText(""+i);
-        tvTxt.setText("Пятница "+group);
+        TimeTable tm = new TimeTable();
+
+        tvTxt.setText("Пятница "+", "+group+" ,"+tm.CountrOfWeeks()+" неделя");
 
 
         TextView t0_1 = (TextView) findViewById(R.id.m0_1);
@@ -113,7 +115,6 @@ public class FifthActivity extends AppCompatActivity {
 
             //утсновка расписания
             ArrayList<TextView> al1 = new ArrayList<>();
-        TimeTable tm = new TimeTable();
 
 
 
@@ -173,11 +174,51 @@ public class FifthActivity extends AppCompatActivity {
                     //t1_4.setText(ma.TimeTable[i][1]);
                     //t1_5.setText(ma.TimeTable[i][2]);
                     //t1_6.setText(ma.TimeTable[i][3]);
+                    /*
                     al1.get(counter).setText(timetable[i][0] + "\n");
                     al1.get(counter + 1).setText(timetable[i][1] + "\n");
                     al1.get(counter + 2).setText(timetable[i][2] + "\n");
                     al1.get(counter + 3).setText(timetable[i][3] + "\n");
+*/
+                    if(tm.CountOfLessons(timetable[i][0])){
+                        //если больше одного предмета
+                        String lesson=tm.DecodeStringLesson(timetable[i][0],tm.CountrOfWeeks());
+                        if (lesson != "" && lesson.length()>1) {
 
+                            String lesson_1 = lesson;
+                            if (lesson.charAt(lesson.length() - 1) == '1') {
+                                lesson.replace('1', ' ');
+                            } else if (lesson.charAt(lesson.length() - 1) == '2') {
+                                lesson.replace('2', ' ');
+                            }
+
+                            al1.get(counter).setText(lesson + "\n");
+                            al1.get(counter + 1).setText(tm.DecodeStringType(lesson_1, timetable[i][1]) + "\n");
+                            al1.get(counter + 2).setText(tm.DecodeStringTeacher(lesson_1, timetable[i][2]) + "\n");
+                            al1.get(counter + 3).setText(tm.DecodeStringClassroom(lesson_1, timetable[i][3]) + "\n");
+                        }
+
+
+
+                    }
+                    else{
+                        // если один предмет
+                        String lesson=tm.DecodeStringLesson(timetable[i][0],tm.CountrOfWeeks());
+                        if (lesson != "" && lesson.length()>1) {
+
+                            String lesson_1 = lesson;
+                            if (lesson.charAt(lesson.length() - 1) == '1') {
+                                lesson.replace('1', ' ');
+                            } else if (lesson.charAt(lesson.length() - 1) == '2') {
+                                lesson.replace('2', ' ');
+                            }
+
+                            al1.get(counter).setText(lesson + "\n");
+                            al1.get(counter + 1).setText(timetable[i][1] + "\n");
+                            al1.get(counter + 2).setText(timetable[i][2] + "\n");
+                            al1.get(counter + 3).setText(tm.DecodeStringClassroom(lesson_1, timetable[i][3]) + "\n");
+                        }
+                    }
 
                     //}
                     counter += 4;
@@ -192,12 +233,51 @@ public class FifthActivity extends AppCompatActivity {
                 for (int i = day * 12 - 12; i < day * 12 + 11 - 12; i += 2) {
                     // if(tm.DecodeStringLesson(timetable[i][0],tm.CountrOfWeeks())==true){
 
-
+/*
                     al1.get(counter).setText(timetable[i][0] + "\n");
                     al1.get(counter + 1).setText(timetable[i][1] + "\n");
                     al1.get(counter + 2).setText(timetable[i][2] + "\n");
                     al1.get(counter + 3).setText(timetable[i][3] + "\n");
+*/
+                    if(tm.CountOfLessons(timetable[i][0])){
+                        //если больше одного предмета
+                        String lesson=tm.DecodeStringLesson(timetable[i][0],tm.CountrOfWeeks());
+                        if (lesson != "" && lesson.length()>1) {
 
+                            String lesson_1 = lesson;
+                            if (lesson.charAt(lesson.length() - 1) == '1') {
+                                lesson.replace('1', ' ');
+                            } else if (lesson.charAt(lesson.length() - 1) == '2') {
+                                lesson.replace('2', ' ');
+                            }
+
+                            al1.get(counter).setText(lesson + "\n");
+                            al1.get(counter + 1).setText(tm.DecodeStringType(lesson_1, timetable[i][1]) + "\n");
+                            al1.get(counter + 2).setText(tm.DecodeStringTeacher(lesson_1, timetable[i][2]) + "\n");
+                            al1.get(counter + 3).setText(tm.DecodeStringClassroom(lesson_1, timetable[i][3]) + "\n");
+                        }
+
+
+
+                    }
+                    else{
+                        // если один предмет
+                        String lesson=tm.DecodeStringLesson(timetable[i][0],tm.CountrOfWeeks());
+                        if (lesson != "" && lesson.length()>1) {
+
+                            String lesson_1 = lesson;
+                            if (lesson.charAt(lesson.length() - 1) == '1') {
+                                lesson.replace('1', ' ');
+                            } else if (lesson.charAt(lesson.length() - 1) == '2') {
+                                lesson.replace('2', ' ');
+                            }
+
+                            al1.get(counter).setText(lesson + "\n");
+                            al1.get(counter + 1).setText(timetable[i][1] + "\n");
+                            al1.get(counter + 2).setText(timetable[i][2] + "\n");
+                            al1.get(counter + 3).setText(tm.DecodeStringClassroom(lesson_1, timetable[i][3]) + "\n");
+                        }
+                    }
 
                     counter += 4;
 

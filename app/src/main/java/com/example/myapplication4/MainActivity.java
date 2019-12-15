@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +21,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Field;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -38,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
     int numberofday=0;
     String[][] TimeTable;
     ArrayList<String> arrayList;
+    String dateofweek=null;
+    TimeTable tm = new TimeTable();
+
 
     private final static String FILE_NAME = "content.txt";
 
@@ -54,6 +59,14 @@ TimeTable tm = new TimeTable();
 tm.CountrOfWeeks();
 //tm.ReadFile();
         arrayList=ReadTimeTable();
+        String temp;
+        for(int i=0;i<arrayList.size();i++){
+            if(arrayList.get(i).contains("|")){
+                temp=arrayList.get(i);
+                temp=temp.replace("|","");
+                arrayList.set(i,temp);
+            }
+        }
         tw =(TextView) findViewById(R.id.label);
         tw1 =(TextView) findViewById(R.id.label1);//  для проверки что в файле ( для этого ужно убрать переход на ативити)
         ed = (EditText) findViewById(R.id.editText);
@@ -62,7 +75,6 @@ tm.CountrOfWeeks();
         c.setTime(new Date());
         int dd = c.get(Calendar.DAY_OF_WEEK);
 
-        String dateofweek=null;
 
         switch (dd) {
             case 1:dateofweek="Воскресенье"; break;
@@ -81,7 +93,9 @@ switch (dateofweek){
     case "Четверг":numberofday=4; break;
     case "Пятница":numberofday=5; break;
     case "Суббота":numberofday=6; break;
-        default:break;
+    case "Воскресенье":numberofday=7; break;
+
+    default:break;
 }
 
 
@@ -98,6 +112,7 @@ if(fin!=null) {
     if(file.exists()){
         //tw1.setText(""+CheckText());
         // тут устаовка расписания для всех активити
+        //numberofday=6;//не забыть убрать
         Intent intent;
         switch (numberofday){
             case 1:
@@ -142,7 +157,13 @@ if(fin!=null) {
                 intent.putExtra("timetable",arrayList);
                 startActivity(intent);
                 break;
-                default:
+            case 7:
+                tw.setText("Сегодня "+dateofweek+" ,"+tm.CountrOfWeeks()+"неделя");
+                ed.setVisibility(View.GONE);
+                Button but = (Button) findViewById(R.id.button);
+                but.setVisibility(View.GONE);
+
+                default: break;
         }
 
 
@@ -180,6 +201,7 @@ if(fin!=null) {
                 // тут установка расписания для всех активити
 
             Intent intent;
+
             switch (numberofday){
                 case 1:
                     intent = new Intent(MainActivity.this, FirstActivity.class);
@@ -217,7 +239,14 @@ if(fin!=null) {
                     intent.putExtra("timetable",arrayList);
                     startActivity(intent);
                     break;
-                default:
+                case 7:
+                    tw.setText("Сегодня "+dateofweek);
+                    ed.setVisibility(View.GONE);
+                    Button but = (Button) findViewById(R.id.button);
+                    but.setVisibility(View.GONE);
+                    tw.setText("Сегодня "+dateofweek+" ,"+tm.CountrOfWeeks()+"неделя");
+
+                default:break;
             }
                 //openText(); // для проверки что находится в файле
 

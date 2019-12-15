@@ -21,7 +21,7 @@
                 android:layout_span="6"
                 android:id="@+id/m0_0"
 
-                android:text="Понедельник,Группа"/>
+                android:text=""/>
         </TableRow>
 
         <TableRow
@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="#fff"
-                android:text=" предмет "
+                android:text="  "
                 android:textColor="#36a300" />
 
             <TextView
@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="#fff"
-                android:text=" тип "
+                android:text="  "
                 android:textColor="#36a300" />
 
             <TextView
@@ -69,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="#fff"
-                android:text=" препод "
+                android:text="  "
                 android:textColor="#36a300" />
 
             <TextView
@@ -78,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="#fff"
-                android:text=" аудитория "
+                android:text="  "
                 android:textColor="#36a300" />
 
 
@@ -114,7 +114,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="#fff"
-                android:text=" предмет "
+                android:text=" "
                 android:textColor="#36a300" />
 
             <TextView
@@ -124,7 +124,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="#fff"
-                android:text=" тип "
+                android:text="  "
                 android:textColor="#36a300" />
 
             <TextView
@@ -134,7 +134,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="#fff"
-                android:text=" препод "
+                android:text="  "
                 android:textColor="#36a300" />
 
             <TextView
@@ -144,7 +144,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="#fff"
-                android:text=" аудитория "
+                android:text="  "
                 android:textColor="#36a300" />
 
 
@@ -180,7 +180,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="#fff"
-                android:text=" предмет "
+                android:text="  "
                 android:textColor="#36a300" />
 
             <TextView
@@ -190,7 +190,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="#fff"
-                android:text=" тип "
+                android:text="  "
                 android:textColor="#36a300" />
 
             <TextView
@@ -200,7 +200,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="#fff"
-                android:text=" препод "
+                android:text=" "
                 android:textColor="#36a300" />
 
             <TextView
@@ -210,7 +210,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="#fff"
-                android:text=" аудитория "
+                android:text="  "
                 android:textColor="#36a300" />
 
 
@@ -246,7 +246,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="#fff"
-                android:text=" предмет "
+                android:text="  "
                 android:textColor="#36a300" />
 
             <TextView
@@ -256,7 +256,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="#fff"
-                android:text=" тип "
+                android:text="  "
                 android:textColor="#36a300" />
 
             <TextView
@@ -266,7 +266,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="#fff"
-                android:text=" препод "
+                android:text=" "
                 android:textColor="#36a300" />
 
             <TextView
@@ -276,7 +276,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="#fff"
-                android:text=" аудитория "
+                android:text="  "
                 android:textColor="#36a300" />
 
 
@@ -312,7 +312,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="#fff"
-                android:text=" предмет "
+                android:text="  "
                 android:textColor="#36a300" />
 
             <TextView
@@ -322,7 +322,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="#fff"
-                android:text=" тип "
+                android:text="  "
                 android:textColor="#36a300" />
 
             <TextView
@@ -332,7 +332,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="#fff"
-                android:text=" препод "
+                android:text="  "
                 android:textColor="#36a300" />
 
             <TextView
@@ -342,7 +342,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="#fff"
-                android:text=" аудитория "
+                android:text=" "
                 android:textColor="#36a300" />
 
 
@@ -378,7 +378,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="#fff"
-                android:text=" предмет "
+                android:text=" "
                 android:textColor="#36a300" />
 
             <TextView
@@ -388,7 +388,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="#fff"
-                android:text=" тип "
+                android:text=" "
                 android:textColor="#36a300" />
 
             <TextView
@@ -398,7 +398,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="#fff"
-                android:text=" препод "
+                android:text="  "
                 android:textColor="#36a300" />
 
             <TextView
@@ -408,7 +408,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="#fff"
-                android:text=" аудитория "
+                android:text="  "
                 android:textColor="#36a300" />
 
 
@@ -444,7 +444,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="#fff"
-                android:text=" предмет "
+                android:text="  "
                 android:textColor="#36a300" />
 
             <TextView
@@ -454,7 +454,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="#fff"
-                android:text=" тип "
+                android:text="  "
                 android:textColor="#36a300" />
 
             <TextView
@@ -464,7 +464,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="#fff"
-                android:text=" препод "
+                android:text=" "
                 android:textColor="#36a300" />
 
             <TextView
@@ -474,7 +474,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="#fff"
-                android:text=" аудитория "
+                android:text="  "
                 android:textColor="#36a300" />
 
 

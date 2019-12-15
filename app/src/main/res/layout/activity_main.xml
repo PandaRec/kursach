@@ -52,6 +52,7 @@
             android:gravity="center"
             android:layout_gravity="center"
             android:onClick="subbmit"
+            android:id="@+id/button"
             >
 
         </Button>
