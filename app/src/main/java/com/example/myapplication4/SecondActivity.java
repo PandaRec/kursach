@@ -160,7 +160,7 @@ public class SecondActivity extends AppCompatActivity {
         if (tm.CountrOfWeeks() % 2 == 0) {
             //четная неделя
 
-            for (int i = day * 12 + 1; i < day * 12 + 11 - 12; i += 2) {
+            for (int i = day * 12 + 1-12; i < day * 12 + 12 - 12; i += 2) {
 
                 if(tm.CountOfLessons(timetable[i][0])){
                     //если больше одного предмета

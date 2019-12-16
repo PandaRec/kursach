@@ -14,6 +14,7 @@ import android.view.View.MeasureSpec;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -45,7 +46,6 @@ public class FirstActivity extends AppCompatActivity {
         day=intent.getIntExtra("day",0);
 day=1;
         i=1;
-
 
 
 
@@ -142,7 +142,6 @@ day=1;
 
 
         timetable_pre = intent.getStringArrayListExtra("timetable");
-        int fsdfs=timetable_pre.size();
         String[][] timetable = new String[timetable_pre.size() / 4][4];
 
         int counter1 = 0;
@@ -160,7 +159,7 @@ day=1;
         if (tm.CountrOfWeeks() % 2 == 0) {
             //четная неделя
 
-            for (int i = day * 12 + 1; i < day * 12 + 11 - 12; i += 2) {
+            for (int i = day * 12 +1 -12; i < day * 12 + 12 - 12; i += 2) {
 
 
                 if(tm.CountOfLessons(timetable[i][0])){
@@ -186,6 +185,7 @@ day=1;
                 }
                 else{
                     // если один предмет
+
                     String lesson=tm.DecodeStringLesson(timetable[i][0],tm.CountrOfWeeks());
                     if (lesson != "" && lesson.length()>1) {
 

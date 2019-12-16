@@ -115,14 +115,20 @@ public class TimeTable  {
 
                 }
                 //else return "";
-            } else return "";
+            }
+            else if(lesson.contains("кр")){
+                if(lesson.contains(String.valueOf(week))) return "";
+                String[] temp=lesson.split("кр ");
+                String [] temp_2=temp[1].split(" н ");
+               return temp_2[1];
+            }
+            else return "";
 
 
         }
 
-        else {
-            return lesson;
-        }
+
+        else return lesson;
     }
 //определяем количество предметов в одной паре
     public boolean CountOfLessons(String lesson){
