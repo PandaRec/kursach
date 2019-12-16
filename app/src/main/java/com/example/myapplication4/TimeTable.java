@@ -27,7 +27,7 @@ public class TimeTable  {
 
 
 
-
+// подсчет какая сейчас неделя
     public int CountrOfWeeks() {
         System.out.println("-------------------------------------------------------");
         Calendar c_sept = Calendar.getInstance();
@@ -35,25 +35,26 @@ public class TimeTable  {
         Calendar c_now = Calendar.getInstance();
         c_now.setTime(new Date());
 
-        //c.setTime(new Date());
         c_sept.set(c_sept.get(Calendar.YEAR), 8, 1); // отсчет месяцев с 0
         int a = c_sept.get(Calendar.YEAR);
         int b = c_sept.get(Calendar.DATE);
 
         int day = c_sept.get(Calendar.DAY_OF_YEAR);
         int day1 = c_now.get(Calendar.DAY_OF_YEAR);
+
         System.out.println(day);
         System.out.println(day1);
 
         if (c_sept.get(Calendar.DAY_OF_MONTH) == 1) {
             day += 1;
-        } else if (c_sept.get(Calendar.DAY_OF_MONTH) == 7) {
-            day += 2;
         }
+
+
+
         System.out.println(day);
         int week = 1;
         int counter = 0;
-        for (int i = day; i < day1; i += 7) {
+        for (int i = day; i <= day1; i += 7) {
             counter += 1;
             if (i >= day && i <= day1) week = counter;//15
         }
@@ -61,7 +62,7 @@ public class TimeTable  {
         System.out.println(week);
         return week;
     }
-
+// из строки получаем строку без цифр
     public String DecodeStringLesson(String lesson, int week) {
 
         if (lesson.contains("1") || lesson.contains("2") ||
@@ -123,12 +124,12 @@ public class TimeTable  {
             return lesson;
         }
     }
-
+//определяем количество предметов в одной паре
     public boolean CountOfLessons(String lesson){
         if (lesson.split(" н ").length - 1 > 1) {return true;}
         else return false;
         }
-
+//оставляем нужный тип для конкретного предмета
 public  String  DecodeStringType(String lesson,String type){
         if(lesson=="") return "";
     String[] temp =type.split(" ");
@@ -159,6 +160,7 @@ public  String  DecodeStringType(String lesson,String type){
         }
 
     }
+//оставляем нужного препода для конкретного предмета
 
     public String DecodeStringTeacher(String lesson,String teachers){
         if(lesson=="") return "";
@@ -186,6 +188,8 @@ public  String  DecodeStringType(String lesson,String type){
 
         }
     }
+    //оставляем нужную адтирию для конкретного предмета
+
     public String DecodeStringClassroom(String lesson,String classrooms) {
         if (lesson == "") return "";
         String[] temp = classrooms.split(" ");

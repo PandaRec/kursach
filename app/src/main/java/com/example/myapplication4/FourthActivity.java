@@ -33,11 +33,6 @@ public class FourthActivity extends AppCompatActivity {
     int day;
     ArrayList<String> timetable_pre;
 
-    //String[][] timetable;
-
-    //private static final int SWIPE_MIN_DISTANCE = 130;
-    //private static final int SWIPE_MAX_DISTANCE = 300;
-    //private static final int SWIPE_MIN_VELOCITY = 200;
 
     private static final int SWIPE_MIN_DISTANCE = 50;//130
     private static final int SWIPE_MAX_DISTANCE = 900;//300
@@ -49,7 +44,6 @@ public class FourthActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fourth);
-//boolean first_open=false;
         Intent intent = getIntent();
         group=intent.getStringExtra("group");
         day=intent.getIntExtra("day",0);
@@ -59,17 +53,14 @@ public class FourthActivity extends AppCompatActivity {
 
 
 
-        //i=intent.getIntExtra("counter",0);
         i=4;
 
 
 
-        // i = 1;
         lSwipeDetector = new GestureDetectorCompat(this, new MyGestureListener());
         main_layout = (TableLayout) findViewById(R.id.main_layout);
 
         tvTxt = (TextView) findViewById(R.id.m0_0);
-       // tvTxt.setText(""+i);
         TimeTable tm = new TimeTable();
 
         tvTxt.setText("Четверг "+", "+group+" ,"+tm.CountrOfWeeks()+" неделя");
@@ -125,7 +116,6 @@ public class FourthActivity extends AppCompatActivity {
         TextView t6_5 = (TextView) findViewById(R.id.m6_5);
         TextView t6_6 = (TextView) findViewById(R.id.m6_6);
 
-//if(first_open==false) {
     //утсновка расписания
     ArrayList<TextView> al1 = new ArrayList<>();
 
@@ -161,7 +151,6 @@ public class FourthActivity extends AppCompatActivity {
     al1.add(t6_6);
 
 
-    //ArrayList<String> timetable_pre;// = new ArrayList<String>();
     timetable_pre = intent.getStringArrayListExtra("timetable");
 
     String[][] timetable = new String[timetable_pre.size() / 4][4];
@@ -184,18 +173,7 @@ int counter = 0;
         //четная неделя
 
         for (int i = day * 12 + 1; i < day * 12 + 11 - 12; i += 2) {
-            //if(tm.DecodeStringLesson(timetable[i][0],tm.CountrOfWeeks())==true){
 
-            //t1_3.setText(ma.TimeTable[i][0]);
-            //t1_4.setText(ma.TimeTable[i][1]);
-            //t1_5.setText(ma.TimeTable[i][2]);
-            //t1_6.setText(ma.TimeTable[i][3]);
-            /*
-            al1.get(counter).setText(timetable[i][0] + "\n");
-            al1.get(counter + 1).setText(timetable[i][1] + "\n");
-            al1.get(counter + 2).setText(timetable[i][2] + "\n");
-            al1.get(counter + 3).setText(timetable[i][3] + "\n");
-*/
             if(tm.CountOfLessons(timetable[i][0])){
                 //если больше одного предмета
                 String lesson=tm.DecodeStringLesson(timetable[i][0],tm.CountrOfWeeks());
@@ -236,7 +214,6 @@ int counter = 0;
                 }
             }
 
-            //}
             counter += 4;
 
         }
@@ -247,14 +224,7 @@ int counter = 0;
         //не четная неделя
 
         for (int i = day * 12 - 12; i < day * 12 + 11 - 12; i += 2) {
-            // if(tm.DecodeStringLesson(timetable[i][0],tm.CountrOfWeeks())==true){
 
-/*
-        al1.get(counter).setText(timetable[i][0] + "\n");
-        al1.get(counter + 1).setText(timetable[i][1] + "\n");
-        al1.get(counter + 2).setText(timetable[i][2] + "\n");
-        al1.get(counter + 3).setText(timetable[i][3] + "\n");
-*/
             if(tm.CountOfLessons(timetable[i][0])){
                 //если больше одного предмета
                 String lesson=tm.DecodeStringLesson(timetable[i][0],tm.CountrOfWeeks());
@@ -297,7 +267,6 @@ int counter = 0;
 
         counter += 4;
 
-        //}
         }
 
     }
@@ -305,36 +274,9 @@ int counter = 0;
 
 
 
-//}
-        //int measuredHeight = (new StaticLayout(measuredText, paint, targetWidth, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, true)).getHeight();
-/*
-for(int i=0;i<al1.size();i++){
-    al1.get(i).requestLayout();
-}
-*/
 
         ArrayList<Integer> list = new ArrayList<Integer>();
 
-/*
-        t0_1.measure(MeasureSpec.makeMeasureSpec(231, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t0_2.measure(MeasureSpec.makeMeasureSpec(262, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t0_3.measure(MeasureSpec.makeMeasureSpec(358, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t0_4.measure(MeasureSpec.makeMeasureSpec(140, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t0_5.measure(MeasureSpec.makeMeasureSpec(280, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t0_6.measure(MeasureSpec.makeMeasureSpec(120, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-*/
 
         t0_1.measure(MeasureSpec.makeMeasureSpec((int)(55 * Resources.getSystem().getDisplayMetrics().density), MeasureSpec.AT_MOST),
                 MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
@@ -381,25 +323,7 @@ for(int i=0;i<al1.size();i++){
         t0_4.setHeight(max);
         t0_5.setHeight(max);
         t0_6.setHeight(max);
-/*
-        t1_1.measure(MeasureSpec.makeMeasureSpec(231, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
 
-        t1_2.measure(MeasureSpec.makeMeasureSpec(262, MeasureSpec.AT_MOST),
-             MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t1_3.measure(MeasureSpec.makeMeasureSpec(358, MeasureSpec.AT_MOST),
-               MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t1_4.measure(MeasureSpec.makeMeasureSpec(140, MeasureSpec.AT_MOST),
-              MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t1_5.measure(MeasureSpec.makeMeasureSpec(280, MeasureSpec.AT_MOST),
-              MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t1_6.measure(MeasureSpec.makeMeasureSpec(120, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-*/
 
         t1_1.measure(MeasureSpec.makeMeasureSpec((int)(55 * Resources.getSystem().getDisplayMetrics().density), MeasureSpec.AT_MOST),
                 MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
@@ -447,25 +371,7 @@ for(int i=0;i<al1.size();i++){
         t1_4.setHeight(max);
         t1_5.setHeight(max);
         t1_6.setHeight(max);
-/*
-        t2_1.measure(MeasureSpec.makeMeasureSpec(231, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
 
-        t2_2.measure(MeasureSpec.makeMeasureSpec(262, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t2_3.measure(MeasureSpec.makeMeasureSpec(358, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t2_4.measure(MeasureSpec.makeMeasureSpec(140, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t2_5.measure(MeasureSpec.makeMeasureSpec(280, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t2_6.measure(MeasureSpec.makeMeasureSpec(120, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-*/
 
         t2_1.measure(MeasureSpec.makeMeasureSpec((int)(55 * Resources.getSystem().getDisplayMetrics().density), MeasureSpec.AT_MOST),
                 MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
@@ -516,25 +422,7 @@ for(int i=0;i<al1.size();i++){
         t2_4.setHeight(max);
         t2_5.setHeight(max);
         t2_6.setHeight(max);
-/*
-        t3_1.measure(MeasureSpec.makeMeasureSpec(231, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
 
-        t3_2.measure(MeasureSpec.makeMeasureSpec(262, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t3_3.measure(MeasureSpec.makeMeasureSpec(358, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t3_4.measure(MeasureSpec.makeMeasureSpec(140, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t3_5.measure(MeasureSpec.makeMeasureSpec(280, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t3_6.measure(MeasureSpec.makeMeasureSpec(120, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-*/
 
         t3_1.measure(MeasureSpec.makeMeasureSpec((int)(55 * Resources.getSystem().getDisplayMetrics().density), MeasureSpec.AT_MOST),
                 MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
@@ -582,25 +470,7 @@ for(int i=0;i<al1.size();i++){
         t3_4.setHeight(max);
         t3_5.setHeight(max);
         t3_6.setHeight(max);
-/*
-        t4_1.measure(MeasureSpec.makeMeasureSpec(231, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
 
-        t4_2.measure(MeasureSpec.makeMeasureSpec(262, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t4_3.measure(MeasureSpec.makeMeasureSpec(358, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t4_4.measure(MeasureSpec.makeMeasureSpec(140, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t4_5.measure(MeasureSpec.makeMeasureSpec(280, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t4_6.measure(MeasureSpec.makeMeasureSpec(120, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-*/
 
         t4_1.measure(MeasureSpec.makeMeasureSpec((int)(55 * Resources.getSystem().getDisplayMetrics().density), MeasureSpec.AT_MOST),
                 MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
@@ -648,25 +518,6 @@ for(int i=0;i<al1.size();i++){
         t4_4.setHeight(max);
         t4_5.setHeight(max);
         t4_6.setHeight(max);
-/*
-        t5_1.measure(MeasureSpec.makeMeasureSpec(231, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t5_2.measure(MeasureSpec.makeMeasureSpec(262, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t5_3.measure(MeasureSpec.makeMeasureSpec(358, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t5_4.measure(MeasureSpec.makeMeasureSpec(140, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t5_5.measure(MeasureSpec.makeMeasureSpec(280, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t5_6.measure(MeasureSpec.makeMeasureSpec(120, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-*/
 
         t5_1.measure(MeasureSpec.makeMeasureSpec((int)(55 * Resources.getSystem().getDisplayMetrics().density), MeasureSpec.AT_MOST),
                 MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
@@ -714,25 +565,7 @@ for(int i=0;i<al1.size();i++){
         t5_4.setHeight(max);
         t5_5.setHeight(max);
         t5_6.setHeight(max);
-/*
-        t6_1.measure(MeasureSpec.makeMeasureSpec(231, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
 
-        t6_2.measure(MeasureSpec.makeMeasureSpec(262, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t6_3.measure(MeasureSpec.makeMeasureSpec(358, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t6_4.measure(MeasureSpec.makeMeasureSpec(140, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t6_5.measure(MeasureSpec.makeMeasureSpec(280, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t6_6.measure(MeasureSpec.makeMeasureSpec(120, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-*/
 
         t6_1.measure(MeasureSpec.makeMeasureSpec((int)(55 * Resources.getSystem().getDisplayMetrics().density), MeasureSpec.AT_MOST),
                 MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
@@ -779,39 +612,6 @@ for(int i=0;i<al1.size();i++){
         t6_5.setHeight(max);
         t6_6.setHeight(max);
 
-        int lol =(int) (55 * Resources.getSystem().getDisplayMetrics().density);
-
-
-
-
-
-
-        // frame.measure(View.MeasureSpec.makeMeasureSpec(maxWidth, View.MeasureSpec.AT_MOST),
-        //       View.MeasureSpec.makeMeasureSpec(maxHeight, View.MeasureSpec.AT_MOST));
-
-
-        // int c = tw.getMeasuredHeight(); // 123
-        //int k = tw.getMeasuredWidth(); //231
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       // tvTxt.setText("" + i);
-
         main_layout.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -831,7 +631,6 @@ for(int i=0;i<al1.size();i++){
 
             if (e2.getX() - e1.getX() > SWIPE_MIN_DISTANCE && Math.abs(velocityX) > SWIPE_MIN_VELOCITY) {
                 if(i>1) i--;
-                //tvTxt.setText("" + i);
                 Intent intent;
                 switch (i) {
 
@@ -899,6 +698,7 @@ for(int i=0;i<al1.size();i++){
                     case 2:
                         intent = new Intent(FourthActivity.this, SecondActivity.class);
                         intent.putExtra("group",group);
+                        intent.putExtra("timetable",timetable_pre);
                         startActivity(intent);
                         break;
                     case 3:
@@ -914,7 +714,6 @@ for(int i=0;i<al1.size();i++){
                         intent.putExtra("group",group);
                        // intent.putExtra("day",day);
                         intent.putExtra("timetable",timetable_pre);
-                        int dfjksfk=timetable_pre.size();
                         startActivity(intent);
                         break;
 

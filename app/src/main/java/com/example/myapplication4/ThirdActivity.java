@@ -28,9 +28,6 @@ public class ThirdActivity extends AppCompatActivity {
     int day;
     ArrayList<String> timetable_pre;
 
-    //private static final int SWIPE_MIN_DISTANCE = 130;
-    //private static final int SWIPE_MAX_DISTANCE = 300;
-    //private static final int SWIPE_MIN_VELOCITY = 200;
 
     private static final int SWIPE_MIN_DISTANCE = 50;//130
     private static final int SWIPE_MAX_DISTANCE = 900;//300
@@ -48,7 +45,6 @@ public class ThirdActivity extends AppCompatActivity {
         day=3;
 
 
-        // i=intent.getIntExtra("counter",0);
         i=3;
 
 
@@ -58,7 +54,6 @@ public class ThirdActivity extends AppCompatActivity {
         main_layout = (TableLayout) findViewById(R.id.main_layout);
 
         tvTxt = (TextView) findViewById(R.id.m0_0);
-        //tvTxt.setText(""+i);
         TimeTable tm = new TimeTable();
 
         tvTxt.setText("Среда "+", "+group+" ,"+tm.CountrOfWeeks()+" неделя");
@@ -151,7 +146,6 @@ public class ThirdActivity extends AppCompatActivity {
 
 
         timetable_pre = intent.getStringArrayListExtra("timetable");
-        int fsdfs=timetable_pre.size();
         String[][] timetable = new String[timetable_pre.size() / 4][4];
 
         int counter1 = 0;
@@ -169,18 +163,7 @@ public class ThirdActivity extends AppCompatActivity {
             //четная неделя
 
             for (int i = day * 12 + 1; i < day * 12 + 11 - 12; i += 2) {
-                //if(tm.DecodeStringLesson(timetable[i][0],tm.CountrOfWeeks())==true){
 
-                //t1_3.setText(ma.TimeTable[i][0]);
-                //t1_4.setText(ma.TimeTable[i][1]);
-                //t1_5.setText(ma.TimeTable[i][2]);
-                //t1_6.setText(ma.TimeTable[i][3]);
-                /*
-                al1.get(counter).setText(timetable[i][0] + "\n");
-                al1.get(counter + 1).setText(timetable[i][1] + "\n");
-                al1.get(counter + 2).setText(timetable[i][2] + "\n");
-                al1.get(counter + 3).setText(timetable[i][3] + "\n");
-*/
                 if(tm.CountOfLessons(timetable[i][0])){
                     //если больше одного предмета
                     String lesson=tm.DecodeStringLesson(timetable[i][0],tm.CountrOfWeeks());
@@ -221,7 +204,6 @@ public class ThirdActivity extends AppCompatActivity {
                     }
                 }
 
-                //}
                 counter += 4;
 
 
@@ -232,14 +214,7 @@ public class ThirdActivity extends AppCompatActivity {
             //не четная неделя
 
             for (int i = day * 12 - 12; i < day * 12 + 11 - 12; i += 2) {
-                // if(tm.DecodeStringLesson(timetable[i][0],tm.CountrOfWeeks())==true){
 
-/*
-                al1.get(counter).setText(timetable[i][0] + "\n");
-                al1.get(counter + 1).setText(timetable[i][1] + "\n");
-                al1.get(counter + 2).setText(timetable[i][2] + "\n");
-                al1.get(counter + 3).setText(timetable[i][3] + "\n");
-*/
                 if(tm.CountOfLessons(timetable[i][0])){
                     //если больше одного предмета
                     String lesson=tm.DecodeStringLesson(timetable[i][0],tm.CountrOfWeeks());
@@ -282,32 +257,10 @@ public class ThirdActivity extends AppCompatActivity {
 
                 counter += 4;
 
-                //}
             }
 
         }
         ArrayList<Integer> list = new ArrayList<Integer>();
-
-/*
-        t0_1.measure(MeasureSpec.makeMeasureSpec(231, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t0_2.measure(MeasureSpec.makeMeasureSpec(262, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t0_3.measure(MeasureSpec.makeMeasureSpec(358, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t0_4.measure(MeasureSpec.makeMeasureSpec(140, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t0_5.measure(MeasureSpec.makeMeasureSpec(280, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t0_6.measure(MeasureSpec.makeMeasureSpec(120, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-*/
 
         t0_1.measure(MeasureSpec.makeMeasureSpec((int)(55 * Resources.getSystem().getDisplayMetrics().density), MeasureSpec.AT_MOST),
                 MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
@@ -354,25 +307,7 @@ public class ThirdActivity extends AppCompatActivity {
         t0_4.setHeight(max);
         t0_5.setHeight(max);
         t0_6.setHeight(max);
-/*
-        t1_1.measure(MeasureSpec.makeMeasureSpec(231, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
 
-        t1_2.measure(MeasureSpec.makeMeasureSpec(262, MeasureSpec.AT_MOST),
-             MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t1_3.measure(MeasureSpec.makeMeasureSpec(358, MeasureSpec.AT_MOST),
-               MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t1_4.measure(MeasureSpec.makeMeasureSpec(140, MeasureSpec.AT_MOST),
-              MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t1_5.measure(MeasureSpec.makeMeasureSpec(280, MeasureSpec.AT_MOST),
-              MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t1_6.measure(MeasureSpec.makeMeasureSpec(120, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-*/
 
         t1_1.measure(MeasureSpec.makeMeasureSpec((int)(55 * Resources.getSystem().getDisplayMetrics().density), MeasureSpec.AT_MOST),
                 MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
@@ -420,25 +355,7 @@ public class ThirdActivity extends AppCompatActivity {
         t1_4.setHeight(max);
         t1_5.setHeight(max);
         t1_6.setHeight(max);
-/*
-        t2_1.measure(MeasureSpec.makeMeasureSpec(231, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
 
-        t2_2.measure(MeasureSpec.makeMeasureSpec(262, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t2_3.measure(MeasureSpec.makeMeasureSpec(358, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t2_4.measure(MeasureSpec.makeMeasureSpec(140, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t2_5.measure(MeasureSpec.makeMeasureSpec(280, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t2_6.measure(MeasureSpec.makeMeasureSpec(120, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-*/
 
         t2_1.measure(MeasureSpec.makeMeasureSpec((int)(55 * Resources.getSystem().getDisplayMetrics().density), MeasureSpec.AT_MOST),
                 MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
@@ -486,25 +403,7 @@ public class ThirdActivity extends AppCompatActivity {
         t2_4.setHeight(max);
         t2_5.setHeight(max);
         t2_6.setHeight(max);
-/*
-        t3_1.measure(MeasureSpec.makeMeasureSpec(231, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
 
-        t3_2.measure(MeasureSpec.makeMeasureSpec(262, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t3_3.measure(MeasureSpec.makeMeasureSpec(358, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t3_4.measure(MeasureSpec.makeMeasureSpec(140, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t3_5.measure(MeasureSpec.makeMeasureSpec(280, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t3_6.measure(MeasureSpec.makeMeasureSpec(120, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-*/
 
         t3_1.measure(MeasureSpec.makeMeasureSpec((int)(55 * Resources.getSystem().getDisplayMetrics().density), MeasureSpec.AT_MOST),
                 MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
@@ -552,25 +451,6 @@ public class ThirdActivity extends AppCompatActivity {
         t3_4.setHeight(max);
         t3_5.setHeight(max);
         t3_6.setHeight(max);
-/*
-        t4_1.measure(MeasureSpec.makeMeasureSpec(231, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t4_2.measure(MeasureSpec.makeMeasureSpec(262, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t4_3.measure(MeasureSpec.makeMeasureSpec(358, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t4_4.measure(MeasureSpec.makeMeasureSpec(140, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t4_5.measure(MeasureSpec.makeMeasureSpec(280, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t4_6.measure(MeasureSpec.makeMeasureSpec(120, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-*/
 
         t4_1.measure(MeasureSpec.makeMeasureSpec((int)(55 * Resources.getSystem().getDisplayMetrics().density), MeasureSpec.AT_MOST),
                 MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
@@ -618,25 +498,7 @@ public class ThirdActivity extends AppCompatActivity {
         t4_4.setHeight(max);
         t4_5.setHeight(max);
         t4_6.setHeight(max);
-/*
-        t5_1.measure(MeasureSpec.makeMeasureSpec(231, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
 
-        t5_2.measure(MeasureSpec.makeMeasureSpec(262, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t5_3.measure(MeasureSpec.makeMeasureSpec(358, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t5_4.measure(MeasureSpec.makeMeasureSpec(140, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t5_5.measure(MeasureSpec.makeMeasureSpec(280, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t5_6.measure(MeasureSpec.makeMeasureSpec(120, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-*/
 
         t5_1.measure(MeasureSpec.makeMeasureSpec((int)(55 * Resources.getSystem().getDisplayMetrics().density), MeasureSpec.AT_MOST),
                 MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
@@ -684,25 +546,7 @@ public class ThirdActivity extends AppCompatActivity {
         t5_4.setHeight(max);
         t5_5.setHeight(max);
         t5_6.setHeight(max);
-/*
-        t6_1.measure(MeasureSpec.makeMeasureSpec(231, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
 
-        t6_2.measure(MeasureSpec.makeMeasureSpec(262, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t6_3.measure(MeasureSpec.makeMeasureSpec(358, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t6_4.measure(MeasureSpec.makeMeasureSpec(140, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t6_5.measure(MeasureSpec.makeMeasureSpec(280, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-
-        t6_6.measure(MeasureSpec.makeMeasureSpec(120, MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-*/
 
         t6_1.measure(MeasureSpec.makeMeasureSpec((int)(55 * Resources.getSystem().getDisplayMetrics().density), MeasureSpec.AT_MOST),
                 MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
@@ -749,38 +593,6 @@ public class ThirdActivity extends AppCompatActivity {
         t6_5.setHeight(max);
         t6_6.setHeight(max);
 
-        int lol =(int) (55 * Resources.getSystem().getDisplayMetrics().density);
-
-
-
-
-
-
-        // frame.measure(View.MeasureSpec.makeMeasureSpec(maxWidth, View.MeasureSpec.AT_MOST),
-        //       View.MeasureSpec.makeMeasureSpec(maxHeight, View.MeasureSpec.AT_MOST));
-
-
-        // int c = tw.getMeasuredHeight(); // 123
-        //int k = tw.getMeasuredWidth(); //231
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       // tvTxt.setText("" + i);
 
         main_layout.setOnTouchListener(new View.OnTouchListener() {
             @Override

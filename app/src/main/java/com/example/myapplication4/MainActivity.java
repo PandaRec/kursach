@@ -110,9 +110,7 @@ if(fin!=null) {
     File file = new File(getFileName(fin));
 
     if(file.exists()){
-        //tw1.setText(""+CheckText());
         // тут устаовка расписания для всех активити
-        //numberofday=6;//не забыть убрать
         Intent intent;
         switch (numberofday){
             case 1:
@@ -188,7 +186,6 @@ if(fin!=null) {
         String group= ed.getText().toString().toLowerCase();
 
         boolean result = group.matches("[а-я]{4}[-]{1}\\d{1}\\d{1}[-]{1}\\d{1}\\d{1}"); // это нужно оставить
-        //boolean result =true; // это нужно убрать
 
         if(result==false) {
             Toast toast = Toast.makeText(this, "не верный ввод\nдолжно быть так:\nбсбо-07-18", Toast.LENGTH_LONG);
@@ -248,7 +245,6 @@ if(fin!=null) {
 
                 default:break;
             }
-                //openText(); // для проверки что находится в файле
 
 
 
@@ -297,9 +293,7 @@ if(fin!=null) {
             fin.read(bytes);
             String text = new String (bytes);
             tw.setText(text);
-            //EditText textBox = (EditText) findViewById(R.id.save_text);
 
-            //textBox.setText(getFileName(fin));
 
 
         }
@@ -331,10 +325,7 @@ if(fin!=null) {
             byte[] bytes = new byte[fin.available()];
             fin.read(bytes);
              text = new String (bytes);
-            //tw.setText(text);
-            //EditText textBox = (EditText) findViewById(R.id.save_text);
 
-            //textBox.setText(getFileName(fin));
 
 
         }
@@ -365,7 +356,6 @@ if(fin!=null) {
     }
 
     public static String getFileName(FileInputStream fis){
-        //throws NoSuchFieldException, IllegalArgumentException, IllegalAccessException {
         try
 
         {
@@ -382,7 +372,6 @@ if(fin!=null) {
     }
 
     public  ArrayList ReadTimeTable(){
-       // String[][] timetable = new String[0][0];
         ArrayList<String> timetable_pre = new ArrayList<String>();
         AssetManager assetManager;
         InputStream is;
@@ -399,26 +388,6 @@ if(fin!=null) {
                 c=br.readLine();
                 if(c!=null)timetable_pre.add(c);
             }
-
-            //while(c!=null){ c=br.readLine();timetable_pre.add(c);System.out.println(c);}
-            int loles = timetable_pre.size();
-            //timetable=new String[timetable_pre.size()/4][4];
-            //System.out.println(timetable[0].length);//4
-            //System.out.println(timetable.length);//75
-/*
-int counter=0;
-             for(int i=0;i<timetable.length;i++){
-                 for(int j=0;j<timetable[0].length;j++){
-                     timetable[i][j]=timetable_pre.get(counter);
-                     counter++;
-                 }
-             }
-
- */
-            //System.out.println("lol");
-
-
-           // System.out.println(c);
         }
         catch (IOException e) {}
         return timetable_pre;
